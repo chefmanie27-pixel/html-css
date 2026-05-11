@@ -1,0 +1,150 @@
+/* header styling */
+header {
+  text-align: center;
+  background-color: black;
+  color: bisque;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+/* body styling */
+body{
+  background-color: grey;
+}
+
+/* button layout */
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 15px;
+  gap: 15px;
+}
+
+/* button styling */
+button{
+  border: solid grey;
+  background-color: #700f0f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* button hover */
+button:hover{
+  background-color: #ba2d2d;
+}
+
+/* dropdown button positioning */
+.dropdown{
+  position: relative;
+  z-index: 1000;
+}
+
+/* dropdown button styling */
+.drop_button{
+  border: solid grey;
+  background-color: #700f0f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* dropdown content */
+.drop_content {
+  display: none;
+  position: absolute;
+  background-color: #ba2d2d;
+  min-width:200px ;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+/* links inside dropdown content */
+.drop_content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* change colour while hovering over links */
+.drop_content a:hover{
+  background-color: #f07676;
+}
+
+/* show dropdown content on hover */
+.dropdown:hover .drop_content {
+  display: block;
+}
+
+/* layout of main page */
+.gallery_page {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  justify-content: center;
+  gap: 100px;
+}
+
+/* setup for a tablet display */
+@media (max-width: 768px){
+  .gallery_page{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* setup for a mobile display */
+@media (max-width:480px){
+  .gallery_page{
+    grid-template-columns: repeat(1fr);
+  }
+}
+
+/* layout of content cards */
+.gallery_page div {
+  position: relative;
+  border: solid black;
+  border-radius: 8px ;
+  padding: 15px;
+  background-color:white;
+  width: 200px;
+  text-align: center;
+  transition: box-shadow: 0 4px 10px rgba (0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* content card hover */
+.gallery_page div:hover {
+  transform: translateY(-10px);
+  box-shadow: 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* description overlay on content cards */
+  .overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.gallery_page div:hover .overlay{
+  opacity: 1;
+}
+
+/* gallery image styling */
+img {
+  width: 200px;
+  height: 185px;
+}
+
+
+
