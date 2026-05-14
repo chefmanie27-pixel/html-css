@@ -1,0 +1,109 @@
+/* header styling */
+header {
+    text-align: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.011em; /* Inter looks best with slight negative tracking */
+    color: white;
+    margin-bottom: 50px;
+    background-color: transparent;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+header p {
+    color: bisque;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* Hero Container */
+.hero {
+    width: 100%;
+    height: 40vh; /* Takes up 40% of the screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Animated Gradient Background */
+    background: linear-gradient(-45deg, #000000, #1a1a1a, #2c3e50, #000000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    
+    margin-bottom: 50px;
+    border-bottom: 2px solid #333;
+}
+
+
+/* The Animation Keyframes */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* page styling */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.011em; /* Inter looks best with slight negative tracking */
+  background-color: grey;
+}
+
+/* page layout */
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+    gap: 20px;
+}
+
+/* card styling */
+.product_card{
+    border: solid black;
+    border-radius: 15px;
+    background-color: aliceblue;
+    backdrop-filter: blur(10px);
+    background-color: rgba(240, 248, 255, 0.9); /* aliceblue with 90% opacity */
+}
+
+/* image styling */
+main div img {
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+/* button styling */
+button{
+    background-color: black;
+    color: bisque;
+    border: white;
+    border-radius: 15px;
+    padding: 10px 5px;
+    margin: 5px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.011em; /* Inter looks best with slight negative tracking */
+}
+
+
+
+
+
+
+
+
+
+
