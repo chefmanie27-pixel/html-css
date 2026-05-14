@@ -75,15 +75,13 @@ main {
     border: solid black;
     border-radius: 15px;
     background-color: aliceblue;
-    backdrop-filter: blur(10px);
-    background-color: rgba(240, 248, 255, 0.9); /* aliceblue with 90% opacity */
+    overflow: hidden;
 }
 
 /* image styling */
 main div img {
     width: 100%;
     object-fit: cover;
-    overflow: hidden;
 }
 
 /* button styling */
