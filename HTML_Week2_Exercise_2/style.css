@@ -1,0 +1,387 @@
+/* header styling */
+header {
+  text-align: center;
+  background: rgba(26, 26, 46, 0.8); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  color: bisque;
+  padding: 40px 20px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Sticky effect so it follows you as you scroll */
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+}
+
+header h1 {
+  font-size: 3rem;
+  letter-spacing: 8px; 
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-weight: 300; 
+}
+
+header p {
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+/* body styling */
+body{
+  background-color: #121212;
+}
+
+/* button layout */
+.buttons {
+  margin-top: 25px;
+  gap: 20px;
+}
+
+/* styling of buttons and links*/
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  gap: 15px;
+}
+
+button, .home_btn, .drop_button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: bisque;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  padding: 12px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+button:hover, .home_btn:hover, .drop_button:hover {
+  background: bisque;
+  color: #1a1a2e;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* filtering logic */
+
+/* 1. Hide the radio buttons from view completely */
+input[type="radio"] {
+  display: none !important;
+}
+
+/* 2. Filtering Logic using the General Sibling Selector (~) */
+#landscape:checked ~ .gallery_page .gallery_card:not(.landscape),
+#portrait:checked ~ .gallery_page .gallery_card:not(.portrait),
+#architecture:checked ~ .gallery_page .gallery_card:not(.architecture) {
+  display: none;
+}
+
+/* 3. Highlighting the Active Label inside the Dropdown */
+/* This makes the text bold/white when that specific radio is checked */
+#landscape:checked ~ header .drop_content label[for="landscape"],
+#portrait:checked ~ header .drop_content label[for="portrait"],
+#architecture:checked ~ header .drop_content label[for="architecture"],
+#all:checked ~ header .drop_content label[for="all"] {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: bold;
+}
+
+/* 4. Optional: Changing the "Filter" button color when any filter is active */
+#landscape:checked ~ header .drop_button,
+#portrait:checked ~ header .drop_button,
+#architecture:checked ~ header .drop_button {
+  background: bisque;
+  color: #1a1a2e;
+}
+
+/* Dropdown Content Stylings */
+.drop_content {
+  display: none;
+  position: absolute;
+  background-color: rgba(26, 26, 46, 0.95); 
+  backdrop-filter: blur(10px);
+  min-width: 180px;
+  border-radius: 15px;
+  margin-top: 0px;
+  padding-top: 5px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* dropdown button positioning */
+.dropdown{
+  position: relative;
+  z-index: 1000;
+}
+
+.drop_content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Sits exactly below the button */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the menu under the button */
+  
+  /* Matches Header Frost Styling */
+  background: rgba(26, 26, 46, 0.9); 
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  
+  min-width: 200px;
+  margin-top: 10px; 
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+  overflow: hidden; 
+}
+
+/* Individual Filter Links */
+.dropdown {
+  position: relative;
+  z-index: 1000;
+}
+
+.drop_content {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(26, 26, 46, 0.95); 
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  min-width: 200px;
+  margin-top: 10px; 
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+  overflow: hidden; 
+}
+
+.drop_content label {
+  color: bisque;
+  padding: 14px 20px;
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.drop_content label:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  letter-spacing: 2px;
+}
+
+.dropdown:hover .drop_content {
+  display: block;
+}
+
+/* Expanded hover area to prevent the menu from flickering closed */
+.dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+
+/* layout of main page */
+.gallery_page {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  justify-content: center;
+  max-width: 1200px; 
+  margin: 0 auto;
+  gap: 30px; 
+  padding: 20px;
+}
+
+/* setup for a tablet display */
+@media (max-width: 768px){
+  .gallery_page{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* setup for a mobile display */
+@media (max-width: 480px) {
+  header {
+    position: relative; 
+    padding: 20px 0;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+  }
+
+  .gallery_page {
+    grid-template-columns: 1fr; 
+    gap: 25px;
+    padding: 15px;
+  }
+
+  .gallery_card img {
+    height: 220px;
+  }
+
+  /* Adjust buttons for small screens */
+  .buttons {
+    flex-direction: column; 
+    align-items: center;
+    gap: 12px; 
+    padding: 10px 0;
+  }
+
+  /* button styling in mobile view */
+  .home_btn, .drop_button, header button {
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .dropdown {
+    width: 85%;
+    max-width: 300px;
+  }
+
+  .drop_content {
+    width: 100%; 
+    position: relative; 
+    transform: none;
+    left: 0;
+    margin-top: 5px;
+  }
+
+  .overlay {
+    opacity: 1; 
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.8); 
+    position: relative; 
+    backdrop-filter: none; 
+  }
+}
+
+/* layout of content cards */
+.gallery_page .gallery_card {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 16px; 
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+  padding: 0; 
+  
+  /* Subtle, deep shadow instead of a hard border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  
+  /* Smooth transitions for everything */
+  transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1), 
+              box-shadow 0.5s ease;
+  cursor: pointer;
+}
+
+/* Card Hover State */
+.gallery_page .gallery_card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Handling */
+.gallery_card img {
+  width: 100%;
+  height: 280px; 
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+/* Zoom effect on image when card is hovered */
+.gallery_card:hover img {
+  transform: scale(1.1);
+}
+
+/* The Bottom Info Area (Title & Category) */
+.gallery_card h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 15px 15px 5px 15px;
+  text-align: left;
+}
+
+.gallery_card h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #700f0f; 
+  margin: 0 15px 20px 15px;
+  text-align: left;
+}
+
+/* description overlay on content cards */
+ .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+  
+  /* Frosted Glass Effect */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  /* Start invisible and slightly lower */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  
+  color: #1a1a1a;
+  z-index: 10;
+}
+
+.gallery_card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+}
+
+.overlay h2 {
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.gallery_page div:hover .overlay{
+  opacity: 1;
+}
+
+
