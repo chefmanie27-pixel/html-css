@@ -1,108 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Products</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      padding-top: 90px; 
+    }
+  </style>
 </head>
-<body>
-
-  <nav class="navbar">
-      <div class="logo">NOVA<span>SELECT</span></div>
-      <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contacts</a></li>
-          <li><a href="#">Index</a></li>
-      </ul>
-    </nav>
-
-        <header>
-            <h1>The Future of Innovation, Curated.</h1>
-            <p>Power Your Potential.</p>
-        </header>
-
-    <main>
-
-        <div class="product_card">
-          <img src="https://i.ibb.co/dJm3ZZxN/ps5.avif" alt="PlayStation 5"
-          /><br />
-          <h2> PlayStation 5 Pro</h2>
-          <label>Price: R20,999</label><br />
-          <button>Add to Cart</button>
+<body >
+  <header>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top py-3">
+        <div class="container-fluid w-100">
+          <ul class="navbar-nav nav-pills w-100 nav-justified">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white active" href="./products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./contacts.html">Contacts</a>
+            </li>
+          </ul>
         </div>
-      
-        <div class="product_card">
-          <img
-            src="https://i.ibb.co/8LpYc8FP/Xbox.jpg" alt="Xbox Series X"
-          /><br />
-            <h2> Xbox Series X </h2>
-          <label>Price: R13,999</label><br />
-          <button>Add to Cart</button>
-        </div>
+      </nav>
 
-        <div class="product_card">
-          <img
-            src="https://i.ibb.co/gLF0mrqM/rx-9070.avif" alt="RX 9070"
-          /><br />
-          <h2>Acer Nitro Radeon RX 9070 XT OC 16GB GDDR6</h2>
-          <label>Price: R20 000</label><br />
-          <button>Add to Cart</button>
-        </div>
+      <main class="container-fluid bg-light py-5 text-center">
+      <div class="py-5">
+        <h1 class="display-3 fw-bold text-dark">Explore Our Products.</h1>
+      </div>
 
-        <div class="product_card">
-          <img
-            src="https://i.ibb.co/Gg4X7r8/Ryzen-7.jpg" alt="Ryzen 7"
-          /><br />
-          <h2>Ryzen 7 9850X3D 8-Core 5.6GHz AM5 Processor</h2>
-          <label>Price: R8 000</label><br />
-          <button>Add to Cart</button>
+      <div class="alert alert-warning alert-dismissible fade show rounded-0 text-center m-0 border-0 fw-medium" role="alert">
+      ⚠ High Demand Supply Notice: Single-unit restrictions are active for all core multi-thread accelerator platforms.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    
+    <section class="container py-5 my-auto">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 bg-black border-secondary text-light shadow-sm">
+            <img src="https://i.ibb.co/YTXjq4ty/Quantum-laptop.jpg" class="card-img-top object-fit-cover" alt="Titan Laptop" style="height: 200px;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-bold">Quantum Titan Laptop</h5>
+              <p class="card-text text-secondary small flex-grow-1">Fully loaded workstation array optimized for extreme algorithmic processing speed demands.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 border-top border-secondary pt-3">
+                <span class="fs-5 fw-bold text-primary">R48,999</span>
+                <button class="btn btn-sm btn-primary rounded-pill px-3">Acquire</button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="product_card">
-          <img
-            src="https://i.ibb.co/93kDY8mY/RTX-5060-8-G-VENTUS-2-X-OC.jpg" alt="RTX 5060"
-          /><br />
-          <h2> Nvidia RTX 5060 (8GB)</h2>
-          <label>Price: R9,499</label><br />
-          <button>Add to Cart</button>
+        <div class="col" data-aos="fade-up" data-aos-delay="150">
+          <div class="card h-100 bg-black border-secondary text-light shadow-sm">
+            <img src="https://i.ibb.co/RTckwxF0/ultra-monitor.jpg" class="card-img-top object-fit-cover" alt="Ultra Monitor" style="height: 200px;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-bold">NeoVision Ultra Monitor</h5>
+              <p class="card-text text-secondary small flex-grow-1">Cinematic aspect matrix rendering accurate details over an ultra-wide pixel workspace layer.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 border-top border-secondary pt-3">
+                <span class="fs-5 fw-bold text-primary">R16,499</span>
+                <button class="btn btn-sm btn-primary rounded-pill px-3">Acquire</button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="product_card">
-          <img
-            src="https://i.ibb.co/HDp2JYMs/RTX-5090.jpg" alt="RTX 5090"
-          /><br />
-          <h2>RTX 5090 (32GB)</h2>
-          <label>Price: R84,999</label><br />
-          <button>Add to Cart </button>
+        <div class="col" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 bg-black border-secondary text-light shadow-sm">
+            <img src="https://i.ibb.co/JFCwfPxz/Alloy-keyboard.webp" class="card-img-top object-fit-cover" alt="Tactile Keyboard" style="height: 200px;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-bold">Alloy X Keyboard</h5>
+              <p class="card-text text-secondary small flex-grow-1">CNC milled casing loaded with responsive mechanical hot-swap layout microswitches.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 border-top border-secondary pt-3">
+                <span class="fs-5 fw-bold text-primary">R3,199</span>
+                <button class="btn btn-sm btn-primary rounded-pill px-3">Acquire</button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="product_card">
-          <img src="https://i.ibb.co/TFzQqB9/odyssey.jpg" alt="Samsung Odyssey Neo G9" /><br />
-          <h2>Samsung Odyssey Neo G9 49" Dual UHD Curved Monitor</h2>
-          <label>Price: R42,999</label><br />
-          <button>Add to Cart</button>
+        <div class="col" data-aos="fade-up" data-aos-delay="250">
+          <div class="card h-100 bg-black border-secondary text-light shadow-sm">
+            <img src="https://i.ibb.co/1fSh3BKH/sony-headphone.jpg" class="card-img-top object-fit-cover" alt="Pro Audio" style="height: 200px;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-bold">Sony Noise Canceling Wireless Headphones</h5>
+              <p class="card-text text-secondary small flex-grow-1">Sony noise-canceling headphones are characterized by their unmatched isolation capabilities, deep smart software integration, and long-wearing comfort. They are designed to transform noisy environments into silent, personalized listening spaces.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 border-top border-secondary pt-3">
+                <span class="fs-5 fw-bold text-primary">R5,499</span>
+                <button class="btn btn-sm btn-primary rounded-pill px-3">Acquire</button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="product_card">
-          <img src="https://i.ibb.co/bRMGn36s/Garmin.webp" alt="Garmin Epix Pro" /><br />
-          <h2>Garmin Epix Pro (Gen 2) Sapphire Edition - 47mm</h2>
-          <label>Price: R18,499</label><br />
-          <button>Add to Cart</button>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 bg-black border-secondary text-light shadow-sm">
+            <img src="https://i.ibb.co/8gSgT0SZ/Samsung-2-TB-SSD.webp" class="card-img-top object-fit-cover" alt="M.2 Storage Drive" style="height: 200px;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-bold">Samsung 2TB M.2 SSD</h5>
+              <p class="card-text text-secondary small flex-grow-1">PCIe Gen 5 pipeline thresholds delivering lightning speeds for asset file rendering steps.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 border-top border-secondary pt-3">
+                <span class="fs-5 fw-bold text-primary">R4,250</span>
+                <button class="btn btn-sm btn-primary rounded-pill px-3">Acquire</button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="product_card">
-          <img
-            src="https://i.ibb.co/dJsP54Rn/sony-headphone.jpg"
-            alt="Sony WH-1000XM6 Wireless Headphones"
-          /><br />
-          <h2>Sony WH-1000XM6 Noise Canceling Wireless Headphones</h2>
-          <label>Price: R8,999</label><br />
-          <button>Add to Cart</button>
+        <div class="col" data-aos="fade-up" data-aos-delay="150">
+          <div class="card h-100 bg-black border-secondary text-light shadow-sm">
+            <img src="https://i.ibb.co/zWzrHFZ5/Ryzen-7.jpg" class="card-img-top object-fit-cover" alt="Raytracing Accelerator" style="height: 200px;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-bold">Ryzen 7 7800X3D</h5>
+              <p class="card-text text-secondary small flex-grow-1">This chip uses AMD's specialized 3D V-Cache technology, making it widely considered the best overall pure gaming CPU on the market.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 border-top border-secondary pt-3">
+                <span class="fs-5 fw-bold text-primary">R8,700</span>
+                <button class="btn btn-sm btn-primary rounded-pill px-3">Acquire</button>
+              </div>
+            </div>
+          </div>
         </div>
 
+        <div class="col" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 bg-black border-secondary text-light shadow-sm">
+            <img src="https://i.ibb.co/3m8n4YWK/Design-slate.jpg" class="card-img-top object-fit-cover" alt="Creator Slate" style="height: 200px;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-bold">OmniPad Design Slate</h5>
+              <p class="card-text text-secondary small flex-grow-1">Laminated drawing display translating fine spatial movements instantly into vector points.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 border-top border-secondary pt-3">
+                <span class="fs-5 fw-bold text-primary">R18,200</span>
+                <button class="btn btn-sm btn-primary rounded-pill px-3">Acquire</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col" data-aos="fade-up" data-aos-delay="250">
+          <div class="card h-100 bg-black border-secondary text-light shadow-sm">
+            <img src="https://i.ibb.co/1GCN5JKN/a-Apex-Chassis.jpg" class="card-img-top object-fit-cover" alt="Airflow Tower Case" style="height: 200px;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title fw-bold">Apex Chassis Tower</h5>
+              <p class="card-text text-secondary small flex-grow-1">Advanced passive structural chamber system maximizing raw fan air intake cooling actions.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3 border-top border-secondary pt-3">
+                <span class="fs-5 fw-bold text-primary">R3,899</span>
+                <button class="btn btn-sm btn-primary rounded-pill px-3">Acquire</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
     </main>
+    </header>
+  
+    <footer class="bg-black text-secondary py-4 border-top border-secondary mt-auto">
+      <div class="container text-center">
+        <p class="mb-1 text-light fw-bold tracking-wider">TECHSTOP</p>
+        <p class="small mb-0">&copy; 2026 TechStop Logistics Inc. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true });
+    </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
